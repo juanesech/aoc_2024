@@ -19,13 +19,15 @@ pub fn run(input: &str) -> i32 {
 
     for line in read_lines(input).unwrap() {
         let line = line.unwrap();
-        let splited: Vec<&str> = line.split("   ").collect();
+        let splited: Vec<&str> = line.split(" ").collect();
         column1.push(splited[0].parse::<i32>().expect("Not a number"));
         column2.push(splited[1].parse::<i32>().expect("Not a number"));
     }
 
     let sorted_c1 = sorted(column1.into_iter());
+    print!("Sorted c1: {:?}", sorted_c1);
     let sorted_c2 = sorted(column2.into_iter()).collect::<Vec<i32>>();
+    print!("Sorted c2: {:?}", sorted_c2);
 
     sorted_c1.enumerate().for_each(|(i, v)| {
         let min = cmp::min(v, sorted_c2[i]);
