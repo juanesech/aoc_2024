@@ -12,6 +12,7 @@ fn main() {
         "day1" => libs::day_1::run(input_file),
         "day2" => libs::day_2::run(input_file),
         "day3" => libs::day_3::run(input_file, libs::day_3::Part::P1),
+        "day3_p2" => libs::day_3::run(input_file, libs::day_3::Part::P2),
         _ => day_err(),
     };
     println!("Done")
